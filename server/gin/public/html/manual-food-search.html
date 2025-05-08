@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Nutrient Advisor</title>
+  <link rel="stylesheet" href="/public/css/manual-food-search.css" />
+</head>
+<body>
+
+<!-- Navbar Section -->
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="#" id="navbar__logo">
+      <img src="/public/images/UofA.png" alt="New Logo" style="height: 50px; width: 50px; margin-right: 15px;">
+      Manual Food Search
+    </a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span> <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__btn">
+        <a href="/dashboard" class="button">Home</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/user-meal-history" class="button">Meal Log</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/ai-food-search" class="button">AI Search</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/user-define-meal" class="button">Favorites</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/logout" class="logout-button">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Main Page Content -->
+<main class="app">
+  <div class="header">
+    <h2>What can I help with?</h2>
+  </div>
+
+  <div class="search-box" style="position: relative">
+    <input type="text" id="queryInput" placeholder="Ask about food or quick meals..." />
+    <label for="gramsInput">Grams:</label>
+    <input type="number" id="gramsInput" placeholder="e.g. 100" min="1" step="1" style="margin-top: 5px; margin-bottom: 10px; width: 100px;">
+    <ul id="autocompleteList" class="autocomplete-list"></ul>
+    <button id="searchButton">Search</button>
+  </div>
+
+  <div class="filters">
+    <label for="sortSelect">Sort by:</label>
+    <select id="sortSelect">
+      <option value="">None</option>
+      <option value="calories-asc">Calories (Low to High)</option>
+      <option value="calories-desc">Calories (High to Low)</option>
+      <option value="protein-desc">Protein (High to Low)</option>
+      <option value="phosphorus-desc">Phosphorus (High to Low)</option>
+      <option value="potassium-desc">Potassium (High to Low)</option>
+      <option value="carbs-desc">Carbs (High to Low)</option>
+    </select>
+  </div>
+
+  <div id="resultsContainer"></div> <!-- Results will be injected here -->
+  <div id="recentContainer"></div>
+  <div id="manualMealControls"></div>
+
+
+
+</main>
+
+<script src="/public/js/manual-food-search.js"></script>
+</body>
+</html>

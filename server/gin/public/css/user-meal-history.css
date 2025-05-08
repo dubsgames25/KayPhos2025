@@ -1,0 +1,329 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4ede5;
+}
+
+/* Navbar Styles */
+.navbar {
+  background: #AB0520;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+#navbar__logo {
+  background-color: #ffffff;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+#navbar__logo img {
+  height: 60px;
+  width: 60px;
+}
+
+.blue-text {
+  color: #0C234B;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+.navbar__links {
+  color: #fff;
+  background: #AB0520;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.navbar__links:hover {
+  background: darkred;
+}
+
+.navbar__item {
+  height: 80px;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+  color: #fff;
+}
+
+.navbar__btn .button {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  background-color: #AB0520;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.button-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.button:hover {
+  background: #0C234B;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Icon */
+.navbar__toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 960px) {
+  .navbar__toggle {
+    display: block; /* Display hamburger menu */
+  }
+
+  .navbar__menu {
+    display: none; /* Hide menu items */
+    flex-direction: column; /* Stack menu vertically */
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #AB0520;
+  }
+
+  .navbar__menu.active {
+    display: flex; /* Show menu items */
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__link--items {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .services__container {
+    flex-direction: column;
+  }
+
+  .services__card {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services__container {
+    flex-direction: column; /* Ensure column layout for very small screens */
+  }
+
+  .services__card {
+    margin-top: 1rem; /* Move cards slightly higher on very small screens */
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto; /* Allow the card to resize */
+    width: 100%; /* Make sure the card takes the full width */
+  }
+}
+
+#mobile-menu {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  transform: translate(5%, 20%);
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container p {
+  margin-top: 30px; /* Pushes the text down */
+  font-size: 24px; /* Makes the font larger */
+  font-weight: bold; /* Adds emphasis to the text */
+}
+
+form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 20px;
+  font-size: 20px; /* Makes the font bigger */
+  font-weight: bold; /* Adds emphasis to the text */
+}
+
+input[type="date"] {
+  margin-right: 20px;
+}
+
+canvas {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.history-wrapper {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.meal-block {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.meal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meal-block table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.meal-block th, .meal-block td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.delete-meal-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#loggedMeals {
+  padding: 1rem;
+}
+
+.nutrient-summary td {
+  font-weight: bold;
+  background-color: #f3f3f3;
+}
+
+/* Responsive meal table wrapper */
+@media screen and (max-width: 768px) {
+  .meal-block table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+

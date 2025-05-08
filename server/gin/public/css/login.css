@@ -1,0 +1,193 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4ede5;
+  place-items: center;
+}
+
+body, html {
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  width: 100%; /* Ensure full-width viewport */
+  height: 100%; /* Ensure full-height viewport */
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #AB0520;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start; /* Aligns items to the left */
+  align-items: center; /* Keeps items vertically centered */
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 0; /* Ensures no internal padding */
+  margin: 0; /* Ensures no external margin */
+  width: 100%; /* Full-width navbar */
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between; /* Aligns items evenly */
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+#navbar__logo {
+  background-color: #ffffff;
+  background-image: none;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+#navbar__logo img {
+  height: 60px;
+  width: 60px;
+}
+
+.navbar__title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  background: #AB0520;
+  text-align: left;
+  padding-top: 10px;
+  color: white;
+  font-size: 30px;
+  min-height: 125px;
+}
+
+.login-form {
+  width: 55%;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+label {
+  display: block;
+  margin-top: -20px;  /* Used to push username up */
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+label[for="password"] {
+  margin-top: 20px; /* Moves "Password:" further down */
+  display: block;
+  font-size: 20px;
+}
+
+input[type="text"], input[type="password"], textarea {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background-color: lightgray;
+  font-size: 16px;
+}
+
+input[type="submit"], button {
+  margin-bottom: -35px; /* Reduces spacing below the Submit button */
+  place-self: center;
+  padding: 15px 25px;
+  background-color: #0C234B;
+  font-size: 15px;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+}
+
+p {
+  margin-top: 60px;  /* used to move "Log in" down */
+  font-size: 50px;
+  font-weight: bolder;
+  color: #1E5288;
+}
+
+.new-user {
+  padding-top: 0px;
+}
+
+.new-user p {
+  text-align: center;
+  font-weight: bold;
+  color: #8B0015;
+  font-size: 25px;
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .login-form {
+    width: 90%;              /* Expand form width on small screens */
+    padding: 20px;
+    margin-left: auto;       /* Center the form */
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  p {
+    font-size: 36px;         /* Smaller heading for mobile */
+    text-align: center;      /* Center "Log in" text */
+  }
+
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  input[type="submit"] {
+    font-size: 14px;
+    padding: 12px 20px;
+    margin: 0 auto;          /* Center the submit button */
+    display: block;
+  }
+
+  .new-user {
+    text-align: center;      /* Center the container and its contents */
+  }
+
+  .new-user button {
+    margin: 0 auto;          /* Center the "Sign up now!" button */
+    display: block;
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+}
+

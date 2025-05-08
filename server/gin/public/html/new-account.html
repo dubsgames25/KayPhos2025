@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Kay Phos</title>
+    <link rel="stylesheet" href="/public/css/new-account.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome To Kay Phos!</h1>
+        <h2>Create Account</h2>
+        <form id="new-account-form">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" minlength="5" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" minlength="6" required>
+
+            <label for="confirm-password">Retype Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <p id="error-message" class="error-message"></p>
+            <button type="submit" class="submit-button">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="/">Login here</a></p>
+    </div>
+    <script src="/public/js/new-account.js"></script>
+</body>
+</html>

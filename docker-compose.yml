@@ -1,0 +1,53 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kayphos
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server/gin/public:/kayphos/public
+    depends_on:
+      - db
+    env_file:
+      - .env
+  db:
+    image: postgres:17
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: kayphos
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  postgres_test:
+    image: postgres:17
+    container_name: postgres_test
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata_test:/var/lib/postgresql/data
+
+  python-tools:
+    build:
+      context: .
+      dockerfile: Dockerfile-python
+    container_name: python-tools
+    depends_on:
+      - db
+    environment:
+      PGHOST: db
+      PGUSER: postgres
+      PGPASSWORD: password
+      PGDATABASE: kayphos
+
+volumes:
+    postgres_data:
+    pgdata_test:

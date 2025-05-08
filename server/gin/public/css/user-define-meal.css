@@ -1,0 +1,415 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4ede5;
+}
+
+/* Navbar Styles */
+.navbar {
+  background: #AB0520;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+#navbar__logo {
+  background-color: #ffffff;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+#navbar__logo img {
+  height: 60px;
+  width: 60px;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+.navbar__links {
+  color: #fff;
+  background: #AB0520;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.navbar__links:hover {
+  background: darkred;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+  color: #fff;
+}
+
+.navbar__btn .button {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #AB0520;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.button-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.button:hover {
+  background: #0C234B;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Icon */
+.navbar__toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 960px) {
+  .navbar__toggle {
+    display: block; /* Display hamburger menu */
+  }
+
+  .navbar__menu {
+    display: none; /* Hide menu items */
+    flex-direction: column; /* Stack menu vertically */
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #AB0520;
+  }
+
+  .navbar__menu.active {
+    display: flex; /* Show menu items */
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__link--items {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .services__container {
+    flex-direction: column;
+  }
+
+  .services__card {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services__container {
+    flex-direction: column; /* Ensure column layout for very small screens */
+  }
+
+  .services__card {
+    margin-top: 1rem; /* Move cards slightly higher on very small screens */
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto; /* Allow the card to resize */
+    width: 100%; /* Make sure the card takes the full width */
+  }
+}
+
+#mobile-menu {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  transform: translate(5%, 20%);
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Main Content Wrappers */
+.meal-wrapper,
+.meal-history-wrapper {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.meal-history-wrapper h2,
+.meal-wrapper h2 {
+  margin-bottom: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+  word-break: break-word;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+/* Inputs inside tables */
+#ingredientTable input[type="text"],
+#ingredientTable input[type="number"] {
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  margin-top: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Autocomplete styling */
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1000;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.meal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.log-again-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.log-again-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-meal-btn {
+  display: inline-block; /* override any 'block' styles */
+  background-color: #f44336;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-meal-btn:hover {
+  background-color: #d32f2f;
+}
+
+.meal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.meal-table th, .meal-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.meal-subheader {
+  background-color: #f9f9f9;
+  font-size: 1.1rem;
+}
+
+.nutrient-summary td {
+  font-weight: bold;
+  background-color: #f3f3f3;
+}
+
+/* 🌐 Responsive fixes for saved meals on mobile */
+@media screen and (max-width: 768px) {
+  .meal-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .meal-table thead,
+  .meal-table tbody,
+  .meal-table tr,
+  .meal-table th,
+  .meal-table td {
+    white-space: nowrap;
+  }
+
+  .meal-table th,
+  .meal-table td {
+    min-width: 90px; /* Force space even for narrow screens */
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: 90px;
+  }
+
+  /* Make input fields full width inside table cells */
+  #ingredientTable input[type="text"],
+  #ingredientTable input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Prevent huge Remove buttons */
+  td button {
+    white-space: nowrap;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/ai-food-search.css">
+    <title>Image Recognition System</title>
+</head>
+<body>
+
+<!-- Navbar Section -->
+<nav class="navbar">
+    <div class="navbar__container">
+        <a href="#" id="navbar__logo">
+            <img src="/public/images/UofA.png" alt="New Logo" style="height: 50px; width: 50px; margin-right: 15px;">
+            AI Food Search
+        </a>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+			<span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__btn">
+                <a href="/dashboard" class="button">Home</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/dashboard/user-meal-history" class="button">Meal Log</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/dashboard/manual-food-search" class="button">Manual Search</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/dashboard/user-define-meal" class="button">Favorites</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/dashboard/logout" class="logout-button">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="app">
+    <div class="header">
+        <h2>Upload Image</h2>
+        <div class="server-message"></div>
+    </div>
+    <div class="input-div">
+        <p>Drag & drop image here or <span class="browse">Browse</span></p>
+        <input type="file" class="file" accept="image/png, image/jpeg, image/jpg">
+        <div class="image-preview"></div> <!-- This will display the uploaded images -->
+    </div>
+    <form id="queued-form">
+        <button type="submit">Upload</button>
+    </form>
+    <div class="results-container">
+        <h3>Analysis Results</h3>
+        <div class="results-div"></div>
+    </div>
+    <div id="aiFoodControls"></div>
+
+</main>
+
+
+<!-- Link to external JavaScript file -->
+<script src="/public/js/ai-food-search.js"></script>
+</body>
+</html>

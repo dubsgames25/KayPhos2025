@@ -1,0 +1,36 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest",
+    "test:login": "jest tests/login.test.js",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimsh02/kay-phos.git"
+  },
+  "private": true,
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimsh02/kay-phos/issues"
+  },
+  "homepage": "https://github.com/kimsh02/kay-phos#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jquery": "^3.7.1",
+    "jsdom": "^26.0.0",
+    "util": "^0.12.5"
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Nutrient Dashboard</title>
+  <link rel="stylesheet" href="/public/css/dashboard.css" />
+  <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+          integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+          crossorigin="anonymous"
+  />
+  <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Navbar Section -->
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="#" id="navbar__logo">
+      <img src="/public/images/UofA.png" alt="New Logo" style="height: 50px; width: 50px; margin-right: 15px;">
+      Nutrient Dashboard
+    </a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__btn">
+        <a href="/dashboard/user-meal-history" class="button">Meal Log</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/ai-food-search" class="button">AI Search</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/manual-food-search" class="button">Manual Search</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/user-define-meal" class="button">Favorites</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="/dashboard/logout" class="logout-button">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Welcome Message Section -->
+<div style="text-align: center; margin-top: 60px;">
+  <h3 id="welcomeMessage">Welcome!</h3>
+</div>
+
+<!-- Current Date and Time Section -->
+<div style="text-align: center; margin-top: 20px;">
+  <p><strong>Current Date and Time:</strong> <span id="currentDateTime"></span></p>
+</div>
+
+<!-- Pie Charts Section -->
+<div class="pie-charts">
+  <!-- Phosphorous Chart -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <canvas id="phosphorousChart" width="300" height="300"></canvas>
+    <p class="pie-chart-text">
+      <strong>Phosphorous Consumed:</strong> <span id="phosphorousTotal">Loading...</span> mg<br />
+      <strong>Phosphorous Remaining:</strong> <span id="phosphorousRemaining">Loading...</span> mg
+    </p>
+  </div>
+  <!-- Potassium Chart -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <canvas id="potassiumChart" width="300" height="300"></canvas>
+    <p class="pie-chart-text">
+      <strong>Potassium Consumed:</strong> <span id="potassiumTotal">Loading...</span> mg<br />
+      <strong>Potassium Remaining:</strong> <span id="potassiumRemaining">Loading...</span> mg
+    </p>
+  </div>
+</div>
+
+
+<!-- Enhanced Dashboard Cards Section -->
+<div class="dashboard-buttons">
+  <div class="dashboard-card" data-target="/dashboard/manual-food-search">
+    <p class="card-description">Manually search foods by keyword and filter by nutrients.</p>
+    <img src="/public/images/manual-icon.jpg" alt="Manual Search" class="card-image">
+    <button class="card-button"><span>Go To</span><br><strong>Manual Search</strong></button>
+  </div>
+
+  <div class="dashboard-card" data-target="/dashboard/ai-food-search">
+    <p class="card-description">Use AI to identify foods from a photo and log instantly.</p>
+    <img src="/public/images/ai-icon.jpg" alt="AI Search" class="card-image">
+    <button class="card-button"><span>Go To</span><br><strong>AI Search</strong></button>
+  </div>
+
+  <div class="dashboard-card" data-target="/dashboard/user-define-meal">
+    <p class="card-description">Create and save a custom meal with multiple ingredients.</p>
+    <img src="/public/images/meal-icon.jpg" alt="Define Meal" class="card-image">
+    <button class="card-button"><span>Go To</span><br><strong>Favorites</strong></button>
+  </div>
+
+  <div class="dashboard-card" data-target="/dashboard/user-meal-history">
+    <p class="card-description">View and manage your daily meal history.</p>
+    <img src="/public/images/history-icon.png" alt="Meal History" class="card-image">
+    <button class="card-button"><span>Go To</span><br><strong>Meal Log</strong></button>
+  </div>
+</div>
+
+
+
+<script src="/public/js/dashboard.js"></script>
+</body>
+</html>

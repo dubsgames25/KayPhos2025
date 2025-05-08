@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/public/css/user-define-meal.css" />
+  <title>User Define Meal</title>
+
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="#" id="navbar__logo">
+      <img src="/public/images/UofA.png" alt="New Logo" style="height: 50px; width: 50px; margin-right: 15px;">
+      Favorites
+    </a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__btn"><a href="/dashboard" class="button">Home</a></li>
+      <li class="navbar__btn"><a href="/dashboard/user-meal-history" class="button">Meal Log</a></li>
+      <li class="navbar__btn"><a href="/dashboard/ai-food-search" class="button">AI Search</a></li>
+      <li class="navbar__btn"><a href="/dashboard/manual-food-search" class="button">Manual Search</a></li>
+      <li class="navbar__btn"><a href="/dashboard/logout" class="logout-button">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="meal-wrapper">
+  <div class="meal-history-container">
+    <h2>Your Saved Meals</h2>
+    <div id="mealHistory"></div>
+  </div>
+
+
+  <h2>Log a Custom Meal</h2>
+
+  <label for="mealName">Meal Name:</label>
+  <input type="text" id="mealName" placeholder="e.g. My Lunch Bowl">
+
+  <div id="ingredientsContainer">
+    <h3>Ingredients</h3>
+    <table id="ingredientTable" aria-description="holds ingredients">
+      <thead>
+      <tr>
+        <th>Food Name</th>
+        <th>Grams</th>
+        <th>Calories</th>
+        <th>Protein (g)</th>
+        <th>Carbs (g)</th>
+        <th>Potassium</th>
+        <th>Phosphorus</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody id="ingredientBody">
+      <tr>
+        <td><input type="text" class="ingredient-name"></td>
+        <td><input type="number" class="ingredient-grams"></td>
+        <td><input type="number" class="ingredient-calories"></td>
+        <td><input type="number" class="ingredient-protein"></td>
+        <td><input type="number" class="ingredient-carbs"></td>
+        <td><input type="number" class="ingredient-potassium"></td>
+        <td><input type="number" class="ingredient-phosphorus"></td>
+        <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+      </tr>
+      </tbody>
+    </table>
+    <button id="addIngredient">Add Ingredient</button>
+  </div>
+  <button id="saveMeal">Save Meal</button>
+  <div id="userDefineMealControls"></div>
+
+</div>
+
+
+<script src="/public/js/user-define-meal.js"></script>
+</body>
+</html>
